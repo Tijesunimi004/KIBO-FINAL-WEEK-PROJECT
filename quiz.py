@@ -1,5 +1,5 @@
 def quiz_func():
-  print("Pick a Category")
+    print("Pick a Category")
 options = ["Anime", "Films", "General Knowledge"]
 for (i, option) in enumerate(options):
     print(f"{i + 1}. {option}")

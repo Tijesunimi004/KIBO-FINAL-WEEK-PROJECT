@@ -28,15 +28,15 @@ options = ["I want to play Madlibs", "I want to play the Quiz", "Tell me a progr
 while True:
   input("Press [enter] to continue.")
   for (i, option) in enumerate(options):
-      print(f"{i + 1}. {option}")
-  choice = input("Choose a number: ")
-  if choice.isdecimal() == 1:
+    print(f"{i + 1}. {option}")
+  choice = int(input("Choose a number: "))
+  if choice == 1:
     madlibs_game()
-  elif choice.isdecimal() == 2:
+  elif choice == 2:
     quiz_func()
-  elif choice.isdecimal() == 3:
+  elif choice == 3:
     bot_joke()
-  elif choice.isdecimal() == 4:
+  elif choice == 4:
     print(f"Thanks for using {bot_name}")
     break
   else:
