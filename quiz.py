@@ -1,12 +1,9 @@
 def quiz_func():
   print("Pick a Category")
-options = ["Anime", "Films", "General Knowledge"]
-for (i, option) in enumerate(options):
-    print(f"{i + 1}. {option}")
-choice = input("Pick a number: ")
-
-    if choice.isdigit():
-        choice = int(choice)
+	options = ["Anime", "Films", "General Knowledge"]
+	for (i, option) in enumerate(options):
+    	print(f"{i + 1}. {option}")
+	choice = int(input("Pick a number: "))
 
     if choice == 1:
         print("Welcome to the Anime Quiz! Please answer A, B, C, or D\n")
@@ -81,6 +78,4 @@ choice = input("Pick a number: ")
         print("Your General Knowledge Quiz Score:", general_knowledge_score)
 
     else:
-        print(
-            "Invalid choice or category. Please select the Anime (1), Films (2), or General Knowledge (3) category."
-        )
+        print("Invalid choice or category. Please select the Anime (1), Films (2), or General Knowledge (3) category.")
