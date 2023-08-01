@@ -6,6 +6,7 @@ from madlibs import madlibs_game
 from quiz import quiz_func
 from joke import bot_joke
 from rock_paper_scissors import rps
+from guess_my_number import guess_the_number
 
 # import random
 print("Hi there I'm....")
@@ -26,14 +27,15 @@ while True:
         print()
 
 
-print(f"My name is {bot_name}. How can I help you today?")
+print(f"My name is {bot_name}. What game would you like to play today?")
 options = [
     "I want to play Madlibs",
     "I want to play the Quiz",
     "Tell me a programming joke",
     "Play Rock, Paper, Scissors",
+    "Guess my Number",
     "Exit",
-]
+    ]
 
 while True:
   input("Press [enter] to continue.")
@@ -49,6 +51,8 @@ while True:
   elif choice.isdecimal() and int(choice) == 4:
     rps()
   elif choice.isdecimal() and int(choice) == 5:
+    guess_the_number()
+  elif choice.isdecimal() and int(choice) == 6:
     print(f"Thanks for using {bot_name}")
     break
   else:
