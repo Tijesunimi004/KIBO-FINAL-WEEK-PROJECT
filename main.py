@@ -38,13 +38,13 @@ while True:
   for (i, option) in enumerate(options):
       print(f"{i + 1}. {option}")
   choice = input("Choose a number: ")
-  if choice.isdecimal() == 1:
+  if choice.isdecimal() and int(choice) == 1:
     madlibs_game()
-  elif choice.isdecimal() == 2:
+  elif choice.isdecimal() and int(choice) == 2:
     quiz_func()
-  elif choice.isdecimal() == 3:
+  elif choice.isdecimal() and int(choice) == 3:
     bot_joke()
-  elif choice.isdecimal() == 4:
+  elif choice.isdecimal() and int(choice) == 4:
     print(f"Thanks for using {bot_name}")
     break
   else:
