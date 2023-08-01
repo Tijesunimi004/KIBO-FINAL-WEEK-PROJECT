@@ -5,6 +5,7 @@
 from madlibs import madlibs_game
 from quiz import quiz_func
 from joke import bot_joke
+from rock_paper_scissors import rps
 
 # import random
 print("Hi there I'm....")
@@ -30,6 +31,7 @@ options = [
     "I want to play Madlibs",
     "I want to play the Quiz",
     "Tell me a programming joke",
+    "Play Rock, Paper, Scissors",
     "Exit",
 ]
 
@@ -45,6 +47,8 @@ while True:
   elif choice.isdecimal() and int(choice) == 3:
     bot_joke()
   elif choice.isdecimal() and int(choice) == 4:
+    rps()
+  elif choice.isdecimal() and int(choice) == 5:
     print(f"Thanks for using {bot_name}")
     break
   else:
