@@ -1,26 +1,47 @@
-def guess_the_number():
-    import random
+import random, time
+
+
+def guess_the_number(bot_name, player_name):
+    ran_num = random.randint(1, 10)
     print("I'm thinking of a number between 1 and 10\n")
-    ran_num = random.randrange(10)
-    print("To leave the game type cancel\n")
-    print("To restart the game type restart\n")
-# Ask the user to guess
-# Check to see if the guess is <, >, or = secret number
-    while ran_num < 10:
-        user_num = input("Guess a number between 1 and 10: ")
-        if user_num in ["exit", "Exit"]:
+    time.sleep(2)
+    print("To leave the game type exit")
+    print("To restart the game type restart")
+    time.sleep(2)
+    attempts = 3
+    # Ask the user to guess
+    # Check to see if the guess is <, >, or = secret number
+    while True:
+        if attempts == 0:
+            print("You've run out of attempts.")
             break
-        elif user_num in ["Restart", "restart"]:
+        print(f"You have { attempts } attempts left.")
+        user_inp = input("Guess a number between 1 and 10: ")
+
+
+        if user_inp.lower() == "exit":
+            break
+        elif user_inp in ["Restart", "restart"]:
             guess_the_number()
-        elif user_num.isdecimal() == False:
+            break
+        elif user_inp.isdecimal() == False:
             print("This is not a number")
+            continue
+        
+        # Check number in range
+        user_num = int(user_inp)
+        if user_num == ran_num:
+            print(f"Congratulations! The number was {user_num}\n")
+            break
+        elif user_num < ran_num:
+            print("Your guess is too low\n")
+
+        elif user_num > ran_num:
+            print("Your guess is too high\n")
         else:
-            if int(user_num) == ran_num:
-                print(f"Congratulations! The number was {user_num}\n")
-                break
-            elif int(user_num) < 5:
-                print("Your guess is too low\n")
-            elif int(user_num) >= 5 and int(user_num) <= 10:
-                print("Your guess is too high\n")
-            else:
-                print("This number is not within range\n")
+            print("This number is not within range\n")
+
+        attempts -= 1
+
+
+guess_the_number()
