@@ -16,13 +16,13 @@ def guess_the_number(bot_name, player_name):
             print("You've run out of attempts.")
             break
         print(f"You have { attempts } attempts left.")
-        user_inp = input("Guess a number between 1 and 10: ")
+        user_inp = input(f"{player_name}, can you guess a number between 1 and 10: ")
 
 
         if user_inp.lower() == "exit":
             break
         elif user_inp in ["Restart", "restart"]:
-            guess_the_number()
+            guess_the_number(bot_name, player_name)
             break
         elif user_inp.isdecimal() == False:
             print("This is not a number")
@@ -42,6 +42,3 @@ def guess_the_number(bot_name, player_name):
             print("This number is not within range\n")
 
         attempts -= 1
-
-
-guess_the_number()
