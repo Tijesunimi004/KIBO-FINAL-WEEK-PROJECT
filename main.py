@@ -31,8 +31,10 @@ while True:
         print("Invalid input, Please enter Y/N")
         print()
 player_name = input(f"My name is {bot_name}, What is your name: ")
+
 if not player_name:
     player_name = "Player 1"
+print(f"Nice to meet you {player_name}")
 
 options = [
     "I want to play Madlibs",
@@ -52,10 +54,10 @@ while True:
         madlibs_game(bot_name, player_name)
 
     elif choice.isdecimal() and int(choice) == 2:
-        quiz_func(bot_name, player_name)
+        quiz_func()
 
     elif choice.isdecimal() and int(choice) == 3:
-        bot_joke(bot_name, player_name)
+        bot_joke()
 
     elif choice.isdecimal() and int(choice) == 4:
         rps(bot_name, player_name)
