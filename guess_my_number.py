@@ -5,7 +5,6 @@ def guess_the_number():
     print("To leave the game type cancel\n")
     print("To restart the game type restart\n")
 # Ask the user to guess
-    attempts = 0
 # Check to see if the guess is <, >, or = secret number
     while ran_num < 10:
         user_num = input("Guess a number between 1 and 10: ")
@@ -21,9 +20,7 @@ def guess_the_number():
                 break
             elif int(user_num) < 5:
                 print("Your guess is too low\n")
-                attempts =+ 1
             elif int(user_num) >= 5 and int(user_num) <= 10:
                 print("Your guess is too high\n")
-                attempts =+ 1
             else:
                 print("This number is not within range\n")
