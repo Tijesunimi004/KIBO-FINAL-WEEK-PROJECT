@@ -27,7 +27,10 @@ def quiz_func():
                 if answer_anime == correct_anime_answers[i]:
                     anime_quiz_score += 10
 
-            print("Your Anime Quiz Score:", anime_quiz_score)
+        if anime_quiz_score > 30:
+            print(f"Your Anime Quiz Score is {anime_quiz_score}, You're a whiz")
+        else:
+            print(f"Your Anime Quiz Score is {anime_quiz_score}, You failed")
 
     elif choice.isdecimal() and int(choice) == 2:
         print("Welcome to the Films Quiz! Please answer A, B, C, or D\n")
@@ -51,7 +54,12 @@ def quiz_func():
             if answer_films == correct_films_answers[i]:
                 films_quiz_score += 10
 
-        print("Your Films Quiz Score:", films_quiz_score)
+        if films_quiz_score > 30:
+            print(
+                f"Your Films Quiz Score is {films_quiz_score}, You're a whiz")
+        else:
+            print(f"Your Films Quiz Score is {films_quiz_score}, You failed")
+
 
     elif choice.isdecimal() and int(choice) == 3:
         print("Welcome to the General Knowledge Quiz! Please answer A, B, C, or D\n")
@@ -75,7 +83,12 @@ def quiz_func():
                     if answer_gk == correct_general_knowledge_answers[i]:
                         general_knowledge_score += 10
 
-        print("Your General Knowledge Quiz Score:", general_knowledge_score)
+        if general_knowledge_score > 30:
+            print(
+                f"Your General Knowledge Quiz is {general_knowledge_score}, You're very Knowledgeable")
+        else:
+            print(f"Your General Knowledge Quiz is {general_knowledge_score}, You failed")
+
 
     else:
         print("Invalid choice or category. Please select the Anime (1), Films (2), or General Knowledge (3) category.")

@@ -53,7 +53,7 @@ while True:
   elif choice.isdecimal() and int(choice) == 5:
     guess_the_number()
   elif choice.isdecimal() and int(choice) == 6:
-    print(f"Thanks for using {bot_name}")
+    print(f"Thanks for using {bot_name} the PlayBot")
     break
   else:
     print("You have to enter a number.")
