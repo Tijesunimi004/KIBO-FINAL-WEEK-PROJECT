@@ -26,8 +26,10 @@ def quiz_func():
             if answer_anime in ["A", "B", "C", "D"]:
                 if answer_anime == correct_anime_answers[i]:
                     anime_quiz_score += 10
+            elif answer_anime not in ["A", "B", "C", "D"]:
+                input("Answer not in options please select A, B, C, or D: ")
 
-        if anime_quiz_score > 30:
+        if anime_quiz_score >= 30:
             print(f"Your Anime Quiz Score is {anime_quiz_score}, You're a whiz")
         else:
             print(f"Your Anime Quiz Score is {anime_quiz_score}, You failed")
@@ -53,8 +55,10 @@ def quiz_func():
         if answer_films in ["A", "B", "C", "D"]:
             if answer_films == correct_films_answers[i]:
                 films_quiz_score += 10
+        elif answer_films not in ["A", "B", "C", "D"]:
+            input("Answer not in options please select A, B, C, or D: ")
 
-        if films_quiz_score > 30:
+        if films_quiz_score >= 30:
             print(
                 f"Your Films Quiz Score is {films_quiz_score}, You're a whiz")
         else:
@@ -82,6 +86,8 @@ def quiz_func():
                 if answer_gk in ["A", "B", "C", "D"]:
                     if answer_gk == correct_general_knowledge_answers[i]:
                         general_knowledge_score += 10
+                elif answer_gk not in ["A", "B", "C", "D"]:
+                    input("Answer not in options please select A, B, C, or D: ")
 
         if general_knowledge_score > 30:
             print(
