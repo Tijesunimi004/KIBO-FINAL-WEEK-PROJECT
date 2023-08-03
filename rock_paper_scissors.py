@@ -1,5 +1,6 @@
 import random
 from time import sleep
+from animate import animate
 
 
 def rps(bot_name, player_name):
@@ -65,16 +66,18 @@ def rps(bot_name, player_name):
 
     sleep(2)
 
-    print(f"{player_name} won {player_score} round(s)")
-    print(f"{bot_name} won {bot_score} round(s)")
+    animate(f"{player_name} won {player_score} round(s)")
+    animate(f"{bot_name} won {bot_score} round(s)")
 
     if player_score > bot_score:
-        print(f"{player_name} wins !!!")
+        sleep(1)
+        animate(f"{player_name} wins !!!")
     elif bot_score > player_score:
-        print(f"{bot_name} wins !!!")
+        sleep(1)
+        animate(f"{bot_name} wins !!!")
     else:
         print("It's a draw !!!")
-        sleep(2)
+        sleep(1)
         play_again = input("Do you want to play again? Y/N")
         if play_again.lower() == "y":
             rps()

@@ -1,3 +1,6 @@
+from animate import animate
+
+
 def quiz_func():
     print("Pick a Category")
     options = ["Anime", "Films", "General Knowledge"]
@@ -6,7 +9,7 @@ def quiz_func():
     choice = input("Pick a number: ")
 
     if choice.isdecimal() and int(choice) == 1:
-        print("Welcome to the Anime Quiz! Please answer A, B, C, or D\n")
+        animate("Welcome to the Anime Quiz! Please answer A, B, C, or D\n")
         # Anime quiz questions and answers
         questions_anime = [
                 "What is the name of the stuffed lion in Bleach?\n A. Kon\n B. Urdiu\n C. Jo\n D. Chad",

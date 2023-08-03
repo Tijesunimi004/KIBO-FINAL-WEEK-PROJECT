@@ -1,24 +1,21 @@
 # Kibo FPWP Final Project
-# Put your final project code in this file for submission
-# Add the names of the authors, a brief description, and link to your video in the file called 'readme.md'
-# Then, you can remove these instruction comments
+
 from madlibs import madlibs_game
 from quiz import quiz_func
 from joke import bot_joke
 from rock_paper_scissors import rps
 from guess_my_number import guess_the_number
 from time import sleep
+from animate import animate
 
-# Get player's name
-#"Input your name: ")
 
-# import random
+
 print("Hi there I'm....")
-sleep(2)
+sleep(1.3)
 while True:
-    bot_choice = input(
+    bot_choice = input(animate(
         "Sorry about that, I don't have a name could you please give me one? Type Y/N "
-    )
+    ))
     print()
     if bot_choice.lower() in ["y", "yes"]:
         bot_name = input("Enter the name: ")

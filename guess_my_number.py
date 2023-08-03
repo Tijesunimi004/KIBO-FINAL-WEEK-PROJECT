@@ -1,4 +1,5 @@
 import random, time
+from animate import animate
 
 
 def guess_the_number(bot_name, player_name):
@@ -32,7 +33,7 @@ def guess_the_number(bot_name, player_name):
         # Check number in range
         user_num = int(user_inp)
         if user_num == ran_num:
-            print(f"Congratulations! The number was {user_num}\n")
+            animate(f"Congratulations! The number was {user_num}\n")
             break
         elif user_num < ran_num:
             print("Your guess is too low\n")
