@@ -14,6 +14,7 @@ def guess_the_number(bot_name, player_name):
     while True:
         if attempts == 0:
             print("You've run out of attempts.")
+            print(f"The correct number is {ran_num}")
             break
         print(f"You have { attempts } attempts left.")
         user_inp = input(f"{player_name}, can you guess a number between 1 and 10: ")
