@@ -10,6 +10,9 @@ def rps(bot_name, player_name):
     # Initialize scores
     bot_score, player_score = 0, 0
 
+    # Define the possible choices
+    choices = ("r", "p", "s")
+
     # Ask user for rounds
     while True:
         rounds = input("Enter the number of rounds you want to play: ")
@@ -27,10 +30,14 @@ def rps(bot_name, player_name):
         print(f"Round #{round + 1}")
 
         # Make a choice for the computer player
-        bot_choice = random.choice(["r", "p", "s"])
+        bot_choice = random.choice(choices)
 
         # Get a choice from the user
-        player_choice = input("Rock (r), Paper (p) or Scissors (s)? ")
+        while True:
+            player_choice = input("Rock (r), Paper (p) or Scissors (s)? ")
+            if player_choice not in choices:
+                print(f"{player_choice} is not a valid choice")
+            else: break
 
         # Printing what the computer chooses
         print(f"{bot_name} chooses {bot_choice}")
