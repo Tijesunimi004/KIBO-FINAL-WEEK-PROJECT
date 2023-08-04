@@ -13,9 +13,10 @@ from animate import animate
 print("Hi there I'm....")
 sleep(1.3)
 while True:
-    bot_choice = input(animate(
+    animate(
         "Sorry about that, I don't have a name could you please give me one? Type Y/N "
-    ))
+    )
+    bot_choice = input()
     print()
     if bot_choice.lower() in ["y", "yes"]:
         bot_name = input("Enter the name: ")
