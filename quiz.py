@@ -30,7 +30,7 @@ def quiz_func(player_name):
                 if answer_anime in ["A", "B", "C", "D"]:
                     if answer_anime == correct_anime_answers[i]:
                         anime_quiz_score += 10
-                        continue
+                    break
                 elif answer_anime not in ["A", "B", "C", "D"]:
                     answer_anime = input("Answer not in options please select A, B, C, or D: ").upper()
 
@@ -62,12 +62,14 @@ def quiz_func(player_name):
         for i, question_films in enumerate(questions_films):
             print(question_films)
             answer_films = input(f"{player_name} Answer: ").upper()
-        
-            if answer_films in ["A", "B", "C", "D"]:
-                if answer_films == correct_films_answers[i]:
-                    films_quiz_score += 10
-            elif answer_films not in ["A", "B", "C", "D"]:
-                input("Answer not in options please select A, B, C, or D: ")
+
+            while True: 
+                if answer_films in ["A", "B", "C", "D"]:
+                    if answer_films == correct_films_answers[i]:
+                        films_quiz_score += 10
+                    break
+                elif answer_films not in ["A", "B", "C", "D"]:
+                    answer_films = input("Answer not in options please select A, B, C, or D: ").upper()
 
         if films_quiz_score == 50:
             print(f"{player_name} Films Quiz Score is {films_quiz_score} out of 50, You're a whiz")
@@ -97,12 +99,14 @@ def quiz_func(player_name):
         for i, question_gk in enumerate(questions_general_knowledge):
                 print(question_gk)
                 answer_gk = input("{player_name} Answer: ").upper()
-
-                if answer_gk in ["A", "B", "C", "D"]:
-                    if answer_gk == correct_general_knowledge_answers[i]:
-                        general_knowledge_score += 10
-                elif answer_gk not in ["A", "B", "C", "D"]:
-                    input("Answer not in options please select A, B, C, or D: ")
+    
+                while True:
+                    if answer_gk in ["A", "B", "C", "D"]:
+                        if answer_gk == correct_general_knowledge_answers[i]:
+                            general_knowledge_score += 10
+                        break
+                    elif answer_gk not in ["A", "B", "C", "D"]:
+                        answer_gk = input("Answer not in options please select A, B, C, or D: ").upper()
 
         if general_knowledge_score == 50:
             print(f"{player_name} General Knowledge Quiz Score is {general_knowledge_score} out of 50, You're very Knowledgeable")
