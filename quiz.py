@@ -26,11 +26,15 @@ def quiz_func(player_name):
             print(question_anime)
             answer_anime = input(f"{player_name} Answer: ").upper()
 
-            if answer_anime in ["A", "B", "C", "D"]:
-                if answer_anime == correct_anime_answers[i]:
-                    anime_quiz_score += 10
-            elif answer_anime not in ["A", "B", "C", "D"]:
-                input("Answer not in options please select A, B, C, or D: ")
+            while True:
+                if answer_anime in ["A", "B", "C", "D"]:
+                    if answer_anime == correct_anime_answers[i]:
+                        anime_quiz_score += 10
+                        continue
+                elif answer_anime not in ["A", "B", "C", "D"]:
+                    answer_anime = input("Answer not in options please select A, B, C, or D: ").upper()
+
+
 
         if anime_quiz_score == 50:
             print(f"{player_name} Anime Quiz Score is {anime_quiz_score} out of 50, You're a whiz")
@@ -112,3 +116,5 @@ def quiz_func(player_name):
 
     else:
         print("Invalid choice or category. Please select the Anime (1), Films (2), or General Knowledge (3) category.")
+
+quiz_func("Dan")
