@@ -98,8 +98,8 @@ def quiz_func(player_name):
         
         for i, question_gk in enumerate(questions_general_knowledge):
                 print(question_gk)
-                answer_gk = input("{player_name} Answer: ").upper()
-    
+                answer_gk = input(f"{player_name} Answer: ").upper()
+
                 while True:
                     if answer_gk in ["A", "B", "C", "D"]:
                         if answer_gk == correct_general_knowledge_answers[i]:
@@ -120,5 +120,3 @@ def quiz_func(player_name):
 
     else:
         print("Invalid choice or category. Please select the Anime (1), Films (2), or General Knowledge (3) category.")
-
-quiz_func("Dan")
