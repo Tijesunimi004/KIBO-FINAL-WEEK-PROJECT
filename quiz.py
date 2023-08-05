@@ -1,7 +1,7 @@
 from animate import animate
 
 
-def quiz_func():
+def quiz_func(player_name):
     print("Pick a Category")
     options = ["Anime", "Films", "General Knowledge"]
     for (i, option) in enumerate(options):
@@ -24,7 +24,7 @@ def quiz_func():
 
         for i, question_anime in enumerate(questions_anime):
             print(question_anime)
-            answer_anime = input("Your Answer: ").upper()
+            answer_anime = input(f"{player_name} Answer: ").upper()
 
             if answer_anime in ["A", "B", "C", "D"]:
                 if answer_anime == correct_anime_answers[i]:
@@ -32,20 +32,24 @@ def quiz_func():
             elif answer_anime not in ["A", "B", "C", "D"]:
                 input("Answer not in options please select A, B, C, or D: ")
 
-        if anime_quiz_score >= 30:
-            print(f"Your Anime Quiz Score is {anime_quiz_score}, You're a whiz")
+        if anime_quiz_score == 50:
+            print(f"{player_name} Anime Quiz Score is {anime_quiz_score} out of 50, You're a whiz")
+        elif anime_quiz_score >= 30:
+            print(f"{player_name} Anime Quiz Score is {anime_quiz_score} out of 50, You were close")
+            print("The answers to the questions (1. Kon, 2. Elric, 3. Hunter x Hunter, 4. Survey Corps, 5. Kakashi Hatake)")
         else:
-            print(f"Your Anime Quiz Score is {anime_quiz_score}, You failed")
+            print(f"{player_name} Anime Quiz Score is {anime_quiz_score} outt of 50, You failed")
+            print("The answers to the questions (1. Kon, 2. Elric, 3. Hunter x Hunter, 4. Survey Corps, 5. Kakashi Hatake)")
 
     elif choice.isdecimal() and int(choice) == 2:
         print("Welcome to the Films Quiz! Please answer A, B, C, or D\n")
                     # Films quiz questions and answers
         questions_films = [
-                "Which movie features a young lion cub named Simba, who must reclaim his kingdom from his uncle Scar?\n A. The Lion King\n B. Beauty and the Beast\n C. Aladdin\n D. Frozen",
-                "Who directed the film 'Inception'?\n A. Christopher Nolan\n B. Steven Spielberg\n C. Quentin Tarantino\n D. Martin Scorsese",
-                "Which movie won the Academy Award for Best Picture in 2020?\n A. Parasite\n B. Joker\n C. 1917\n D. The Shape of Water",
-                "Which iconic film features the line 'Here's looking at you, kid'?\n A. Casablanca\n B. The Godfather\n C. Titanic\n D. Forrest Gump",
-                "Which animated film follows the adventures of a young robot named WALL-E, who falls in love with another robot named EVE?\n A. Ratatouille\n B. Toy Story\n C. Finding Nemo\n D. WALL-E",
+                "1. Which movie features a young lion cub named Simba, who must reclaim his kingdom from his uncle Scar?\n A. The Lion King\n B. Beauty and the Beast\n C. Aladdin\n D. Frozen",
+                "2. Who directed the film 'Inception'?\n A. Christopher Nolan\n B. Steven Spielberg\n C. Quentin Tarantino\n D. Martin Scorsese",
+                "3. Which movie won the Academy Award for Best Picture in 2020?\n A. Parasite\n B. Joker\n C. 1917\n D. The Shape of Water",
+                "4. Which iconic film features the line 'Here's looking at you, kid'?\n A. Casablanca\n B. The Godfather\n C. Titanic\n D. Forrest Gump",
+                "5. Which animated film follows the adventures of a young robot named WALL-E, who falls in love with another robot named EVE?\n A. Ratatouille\n B. Toy Story\n C. Finding Nemo\n D. WALL-E",
             ]
 
         correct_films_answers = ["A", "A", "A", "A", "D"]
@@ -53,38 +57,42 @@ def quiz_func():
 
         for i, question_films in enumerate(questions_films):
             print(question_films)
-            answer_films = input("Your Answer: ").upper()
+            answer_films = input(f"{player_name} Answer: ").upper()
+        
+            if answer_films in ["A", "B", "C", "D"]:
+                if answer_films == correct_films_answers[i]:
+                    films_quiz_score += 10
+            elif answer_films not in ["A", "B", "C", "D"]:
+                input("Answer not in options please select A, B, C, or D: ")
 
-        if answer_films in ["A", "B", "C", "D"]:
-            if answer_films == correct_films_answers[i]:
-                films_quiz_score += 10
-        elif answer_films not in ["A", "B", "C", "D"]:
-            input("Answer not in options please select A, B, C, or D: ")
-
-        if films_quiz_score >= 30:
+        if films_quiz_score == 50:
+            print(f"{player_name} Films Quiz Score is {films_quiz_score} out of 50, You're a whiz")
+        elif films_quiz_score >= 30:
             print(
-                f"Your Films Quiz Score is {films_quiz_score}, You're a whiz")
+            f"{player_name} Films Quiz Score is {films_quiz_score} out of 50, You were close")
+            print("The answers are (1. The Lion King, 2. Christopher Nolan, 3. Parasite, 4. Casablanca, 5. WALL-E)")
         else:
-            print(f"Your Films Quiz Score is {films_quiz_score}, You failed")
+            print(f"{player_name} Films Quiz Score is {films_quiz_score} out of 50, You failed")
+            print("The answers are (1. The Lion King, 2. Christopher Nolan, 3. Parasite, 4. Casablanca, 5. WALL-E)")
 
 
     elif choice.isdecimal() and int(choice) == 3:
         print("Welcome to the General Knowledge Quiz! Please answer A, B, C, or D\n")
             # General Knowledge quiz questions and answers
         questions_general_knowledge = [
-                "What is the capital of France?\n A. Berlin\n B. London\n C. Paris\n D. Madrid",
-                "Which planet is known as the 'Red Planet'?\n A. Venus\n B. Mars\n C. Jupiter\n D. Saturn",
-                "What is the largest organ in the human body?\n A. Liver\n B. Heart\n C. Brain\n D. Skin",
-                "Who wrote the play 'Romeo and Juliet'?\n A. William Shakespeare\n B. Oscar Wilde\n C. Charles Dickens\n D. Jane Austen",
-                "Which famous scientist formulated the theory of relativity?\n A. Isaac Newton\n B. Galileo Galilei\n C. Albert Einstein\n D. Nikola Tesla",
+                "1. What is the capital of France?\n A. Berlin\n B. London\n C. Paris\n D. Madrid",
+                "2. Which planet is known as the 'Red Planet'?\n A. Venus\n B. Mars\n C. Jupiter\n D. Saturn",
+                "3. What is the largest organ in the human body?\n A. Liver\n B. Heart\n C. Brain\n D. Skin",
+                "4. Who wrote the play 'Romeo and Juliet'?\n A. William Shakespeare\n B. Oscar Wilde\n C. Charles Dickens\n D. Jane Austen",
+                "5. Which famous scientist formulated the theory of relativity?\n A. Isaac Newton\n B. Galileo Galilei\n C. Albert Einstein\n D. Nikola Tesla",
             ]
 
         correct_general_knowledge_answers = ["C", "B", "D", "A", "C"]
         general_knowledge_score = 0
-
+        
         for i, question_gk in enumerate(questions_general_knowledge):
                 print(question_gk)
-                answer_gk = input("Your Answer: ").upper()
+                answer_gk = input("{player_name} Answer: ").upper()
 
                 if answer_gk in ["A", "B", "C", "D"]:
                     if answer_gk == correct_general_knowledge_answers[i]:
@@ -92,11 +100,14 @@ def quiz_func():
                 elif answer_gk not in ["A", "B", "C", "D"]:
                     input("Answer not in options please select A, B, C, or D: ")
 
-        if general_knowledge_score > 30:
-            print(
-                f"Your General Knowledge Quiz is {general_knowledge_score}, You're very Knowledgeable")
+        if general_knowledge_score == 50:
+            print(f"{player_name} General Knowledge Quiz Score is {general_knowledge_score} out of 50, You're very Knowledgeable")
+        elif general_knowledge_score >= 30:
+            print(f"{player_name} General Knowledge Quiz Score is {general_knowledge_score} out of 50, You were close to scoring everything")
+            print("The answers to all the questions(1. Paris, 2. Mars, 3. Skin, 4. William Shakespeare, 5. Albert Einstein)")
         else:
-            print(f"Your General Knowledge Quiz is {general_knowledge_score}, You failed")
+            print(f"{player_name} General Knowledge Quiz Score is {general_knowledge_score} out of 50, You failed")
+            print("The answers to all the questions(1. Paris, 2. Mars, 3. Skin, 4. William Shakespeare, 5. Albert Einstein)")
 
 
     else:

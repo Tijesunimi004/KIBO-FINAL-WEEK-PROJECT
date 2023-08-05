@@ -52,7 +52,7 @@ while True:
         madlibs_game(bot_name, player_name)
 
     elif choice.isdecimal() and int(choice) == 2:
-        quiz_func()
+        quiz_func(player_name)
 
     elif choice.isdecimal() and int(choice) == 3:
         bot_joke()
