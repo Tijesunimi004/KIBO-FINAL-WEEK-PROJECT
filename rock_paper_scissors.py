@@ -73,8 +73,8 @@ def rps(bot_name, player_name):
 
     sleep(2)
 
-    animate(f"{player_name} won {player_score} round(s)")
-    animate(f"{bot_name} won {bot_score} round(s)")
+    animate(f"{player_name} won {player_score} round(s)\n")
+    animate(f"{bot_name} won {bot_score} round(s)\n")
 
     if player_score > bot_score:
         sleep(1)
