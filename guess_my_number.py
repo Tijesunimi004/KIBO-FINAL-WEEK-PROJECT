@@ -32,14 +32,21 @@ def guess_the_number(bot_name, player_name):
         
         # Check number in range
         user_num = int(user_inp)
+
         if user_num == ran_num:
             animate(f"Congratulations! The number was {user_num}\n")
             break
+
         elif user_num < ran_num:
             print("Your guess is too low\n")
 
+        elif user_num > 10:
+            print("This number is not between 1 and 10")
+            attempts += 1
+
         elif user_num > ran_num:
             print("Your guess is too high\n")
+
         else:
             print("This number is not within range\n")
 
